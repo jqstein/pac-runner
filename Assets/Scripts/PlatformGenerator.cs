@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour {
 
+	public GameObject[] platforms;
 	public GameObject platform;
-	public Transform location;
+	public Transform createLocation;
 
+	private float previousPlatformWidth;
 	private float platformWidth;
 	private float distanceBetweenPlatforms;
-	private float distanceBetweenPlatformsMin = 1;
-	private float distanceBetweenPlatformsMax = 5;
-
+	private float platformHeight;
+	private int selectedPlatform;
 
 	// Use this for initialization
 	void Start () {
-		platformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
+		previousPlatformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.x < location.position.x) {
-			distanceBetweenPlatforms = Random.Range (distanceBetweenPlatformsMin, distanceBetweenPlatformsMax);
-			transform.position = new Vector2(transform.position.x + distanceBetweenPlatforms + platformWidth, transform.position.y);
+		if (transform.position.x < createLocation.position.x) {
+			selectedPlatform = Random.Range(0, platforms.Length);
+			distanceBetweenPlatforms = Random.Range (0, 10);
+			platformWidth = platforms[selectedPlatform].GetComponent<BoxCollider2D> ().size.x;
+			platformHeight = Random.Range(-4, 2);
 
-			Instantiate (platform, transform.position, transform.rotation);
+			transform.position = new Vector2(transform.position.x + distanceBetweenPlatforms + platformWidth/2 + previousPlatformWidth/2, platformHeight);
+			Instantiate (platforms[selectedPlatform], transform.position, transform.rotation);
+
+			previousPlatformWidth = platforms[selectedPlatform].GetComponent<BoxCollider2D> ().size.x;
 		}
 	}
 }

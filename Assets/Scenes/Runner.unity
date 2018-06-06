@@ -155,6 +155,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3de794723c4356c43bb4b85026f33b37, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &146240069 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1221945697154286, guid: 3de794723c4356c43bb4b85026f33b37,
+    type: 2}
+  m_PrefabInternal: {fileID: 76352547}
 --- !u!1 &250586926
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,9 +285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c524cae3eacc3748a082f4e4911b0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jump: 15
+  speed: 15
+  jump: 20
   isInGround: 0
+  isMoving: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -462,8 +468,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b82a0d5c42a8af4db9c1cdca3ee48d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 1221945697154286, guid: 3de794723c4356c43bb4b85026f33b37, type: 2}
-  location: {fileID: 461820183}
+  platforms:
+  - {fileID: 1103342222223014, guid: b7061b5822eb407499f2a71dec9383c3, type: 2}
+  - {fileID: 1344968563098112, guid: 46cc5fbad504d1c4b96170e6d8fe91ef, type: 2}
+  - {fileID: 1221945697154286, guid: 3de794723c4356c43bb4b85026f33b37, type: 2}
+  - {fileID: 1305070061996032, guid: 4881b956af75f284982577ce394c0a93, type: 2}
+  - {fileID: 1255004119389150, guid: 526c05ec69b6171458667c8ff1551249, type: 2}
+  platform: {fileID: 146240069}
+  createLocation: {fileID: 461820183}
 --- !u!4 &1174448168
 Transform:
   m_ObjectHideFlags: 0

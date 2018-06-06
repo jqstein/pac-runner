@@ -91,7 +91,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 421}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 115
+  controlID: 75
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 421}
   m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 34
+  controlID: 12
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -262,7 +262,7 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,21 +287,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 577
-    width: 869
+    width: 790
     height: 441
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 1107878916521825410, guid: 828df22cd589f804588d2cc9bcbea1d8, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.65447366
+    - e00: 0.8240205
       e01: 0
       e02: 0
-      e03: -17.723663
+      e03: -96.47525
       e10: 0
-      e11: 0.65447366
+      e11: 0.8240205
       e12: 0
-      e13: 178.78447
+      e13: 37.973488
       e20: 0
       e21: 0
       e22: 1
@@ -347,7 +347,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 577
-    width: 794
+    width: 790
     height: 441
   m_PersistentViewDataDictionary: {fileID: 0}
   m_AnimEditor: {fileID: 0}
@@ -381,9 +381,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 7a2a0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_ExpandedIDs: b656fcff1857fcff88c9fdff2813feff2a33ffffc6c7ffff9efbffff00000000322a00003e2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -479,19 +479,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefab
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefab
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Vinicius\Desktop\pac-runner
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca290000
-    m_LastClickedID: 10698
-    m_ExpandedIDs: 000000008c2700001a280000a22a0000a42a0000a62a0000a82a0000ffffff7f
+    m_SelectedIDs: 56290000
+    m_LastClickedID: 10582
+    m_ExpandedIDs: 000000008c270000e82700001a280000a22a0000a42a0000a62a0000a82a0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 00000000e84c0000b44e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -684,9 +684,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.810585, y: 1.3941734, z: -0.39216354}
+    m_Target: {x: 22.467928, y: -0.9715582, z: -0.2265625}
     speed: 2
-    m_Value: {x: 2.810585, y: 1.3941734, z: -0.39216354}
+    m_Value: {x: 22.467928, y: -0.9715582, z: -0.2265625}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -714,9 +714,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 49.445805
+    m_Target: 32.627342
     speed: 2
-    m_Value: 49.445805
+    m_Value: 32.627342
   m_Ortho:
     m_Target: 1
     speed: 2

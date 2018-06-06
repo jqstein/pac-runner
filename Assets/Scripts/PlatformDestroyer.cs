@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformDestroyer : MonoBehaviour {
 
-	public GameObject platformDestructorPoint;
+	private GameObject platformDestructorPoint;
 
 	// Use this for initialization
 	void Start () {

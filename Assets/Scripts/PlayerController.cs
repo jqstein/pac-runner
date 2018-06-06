@@ -7,17 +7,20 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float jump;
 	public bool isInGround;
+	public bool isMoving;
 	public LayerMask groundLayer;
 
 	private Rigidbody2D playerRigidBody;
 	private Collider2D playerCollider;
 	private Animator playerAnimator;
+	private float lastX;
 
 	// Use this for initialization
 	void Start () {
 		playerRigidBody = GetComponent<Rigidbody2D> ();
 		playerCollider = GetComponent<Collider2D> ();
 		playerAnimator = GetComponent<Animator> ();
+		lastX = transform.position.x;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +32,11 @@ public class PlayerController : MonoBehaviour {
 			playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jump);
 		}
 
-		playerAnimator.SetFloat ("speed", playerRigidBody.velocity.x);
+		isMoving = lastX != transform.position.x;
+
 		playerAnimator.SetBool ("isInGround", isInGround);
+		playerAnimator.SetBool ("isMoving", isMoving);
+
+		lastX = transform.position.x;
 	}
 }
