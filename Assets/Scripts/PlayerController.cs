@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public bool isInGround;
 	public bool isMoving;
 	public LayerMask groundLayer;
+	public static double score;
 
 	private Rigidbody2D playerRigidBody;
 	private Collider2D playerCollider;
@@ -38,5 +39,8 @@ public class PlayerController : MonoBehaviour {
 		playerAnimator.SetBool ("isMoving", isMoving);
 
 		lastX = transform.position.x;
+		score = Mathf.Round(transform.position.x);
+
+		Debug.Log (score);
 	}
 }

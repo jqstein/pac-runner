@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour {
 
-	public GameObject[] platforms;
+	public GameObject[] grassPlatforms;
+	public GameObject[] sandPlatforms;
+	public GameObject[] dirtPlatforms;
+	public GameObject[] stonePlatforms;
+	public GameObject[] snowPlatforms;
 	public GameObject platform;
 	public Transform createLocation;
 
@@ -22,15 +26,27 @@ public class PlatformGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.x < createLocation.position.x) {
-			selectedPlatform = Random.Range(0, platforms.Length);
+			selectedPlatform = Random.Range(0, grassPlatforms.Length);
 			distanceBetweenPlatforms = Random.Range (0, 10);
-			platformWidth = platforms[selectedPlatform].GetComponent<BoxCollider2D> ().size.x;
+
+			if (PlayerController.score < 500) {
+				platform = grassPlatforms[selectedPlatform];
+			} else if (PlayerController.score < 1000) {
+				platform = sandPlatforms[selectedPlatform];
+			} else if (PlayerController.score < 1500) {
+				platform = dirtPlatforms[selectedPlatform];
+			} else if (PlayerController.score < 2000) {
+				platform = stonePlatforms[selectedPlatform];
+			} else if (PlayerController.score < 2500) {
+				platform = snowPlatforms[selectedPlatform];
+			}
+			platformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
 			platformHeight = Random.Range(-4, 2);
 
 			transform.position = new Vector2(transform.position.x + distanceBetweenPlatforms + platformWidth/2 + previousPlatformWidth/2, platformHeight);
-			Instantiate (platforms[selectedPlatform], transform.position, transform.rotation);
+				Instantiate (platform, transform.position, transform.rotation);
 
-			previousPlatformWidth = platforms[selectedPlatform].GetComponent<BoxCollider2D> ().size.x;
+			previousPlatformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
 		}
 	}
 }
