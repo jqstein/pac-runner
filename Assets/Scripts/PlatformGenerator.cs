@@ -27,7 +27,7 @@ public class PlatformGenerator : MonoBehaviour {
 	void Update () {
 		if (transform.position.x < createLocation.position.x) {
 			selectedPlatform = Random.Range(0, grassPlatforms.Length);
-			distanceBetweenPlatforms = Random.Range (0, 10);
+			distanceBetweenPlatforms = Random.Range (0, PlayerController.speed);
 
 			if (PlayerController.score < 500) {
 				platform = grassPlatforms[selectedPlatform];

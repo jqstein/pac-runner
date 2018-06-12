@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4545659785367320}
   - component: {fileID: 114353052876745912}
   - component: {fileID: 61284059786125696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrassPlatform3x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4260799263988616}
   - component: {fileID: 212306175231890880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4366036339051118}
   - component: {fileID: 212547186456833644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4998218911898742}
   - component: {fileID: 212302048317670970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

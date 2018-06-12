@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4880045314890826}
   - component: {fileID: 212736457852761870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassMid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4344689075794440}
   - component: {fileID: 212680021102182630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassMid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780722787602882}
   - component: {fileID: 212988683105021578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4699551311020042}
   - component: {fileID: 212800494713470460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4032972672679078}
   - component: {fileID: 114459833615356144}
   - component: {fileID: 61873397722625114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrassPlatform5x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4062349200067698}
   - component: {fileID: 212045114531809298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
