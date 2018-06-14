@@ -51,6 +51,18 @@ public class PlayerController : MonoBehaviour {
 			jumpTime = 0.5;
 		}
 
+		if (Input.GetButton ("Fire2")) {
+			powerUp = 1;
+		} else {
+			powerUp = 0;
+		}
+
+		if (Input.GetButton ("Fire3")) {
+			powerUp = 2;
+		} else {
+			powerUp = 0;
+		}
+
 		isMoving = lastX != transform.position.x;
 
 		playerAnimator.SetBool ("isInGround", isInGround);
@@ -79,6 +91,7 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag == "DeadZone") {
 			speed = initialSpeed;
 			gameManager.Restart ();
+			PlatformGenerator.restart = true;
 		}
 	}
 

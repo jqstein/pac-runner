@@ -13,18 +13,26 @@ public class PlatformGenerator : MonoBehaviour {
 	public Transform createLocation;
 
 	private float previousPlatformWidth;
+	private float firstPlatformWidth;
 	private float platformWidth;
 	private float distanceBetweenPlatforms;
 	private float platformHeight;
 	private int selectedPlatform;
+	public static bool restart;
 
 	// Use this for initialization
 	void Start () {
-		previousPlatformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
+		firstPlatformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
+		previousPlatformWidth = firstPlatformWidth;
+			
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (restart) {
+			previousPlatformWidth = firstPlatformWidth;
+			restart = false;
+		}
 		if (transform.position.x < createLocation.position.x) {
 			selectedPlatform = Random.Range(0, grassPlatforms.Length);
 			distanceBetweenPlatforms = Random.Range (0, PlayerController.speed);
