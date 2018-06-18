@@ -37,15 +37,15 @@ public class PlatformGenerator : MonoBehaviour {
 			selectedPlatform = Random.Range(0, grassPlatforms.Length);
 			distanceBetweenPlatforms = Random.Range (0, PlayerController.speed);
 
-			if (PlayerController.score < 500) {
+			if (PlayerController.roundPosition < 500) {
 				platform = grassPlatforms[selectedPlatform];
-			} else if (PlayerController.score < 1000) {
+			} else if (PlayerController.roundPosition < 1000) {
 				platform = sandPlatforms[selectedPlatform];
-			} else if (PlayerController.score < 1500) {
+			} else if (PlayerController.roundPosition < 1500) {
 				platform = dirtPlatforms[selectedPlatform];
-			} else if (PlayerController.score < 2000) {
+			} else if (PlayerController.roundPosition < 2000) {
 				platform = stonePlatforms[selectedPlatform];
-			} else if (PlayerController.score < 2500) {
+			} else if (PlayerController.roundPosition < 2500) {
 				platform = snowPlatforms[selectedPlatform];
 			}
 			platformWidth = platform.GetComponent<BoxCollider2D> ().size.x;

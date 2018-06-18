@@ -148,7 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: 10
   isInGround: 0
-  isMoving: 0
   powerUp: 0
   groundLayer:
     serializedVersion: 2
