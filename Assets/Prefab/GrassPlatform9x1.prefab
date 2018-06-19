@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4930592445529610}
   - component: {fileID: 61383303213073888}
-  - component: {fileID: 114781564231652960}
+  - component: {fileID: 114641002648720952}
   m_Layer: 8
   m_Name: GrassPlatform9x1
   m_TagString: Untagged
@@ -336,7 +336,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114781564231652960
+--- !u!114 &114641002648720952
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1316345139542582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4fce7d838eee549b366a3f0b4896e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 16edaab7e55dce54e84e2499af56ad2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212067402732699304

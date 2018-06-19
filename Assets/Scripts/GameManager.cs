@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 	public PlayerController player;
 	private Vector3 playerStartPoint;
 
-	private PlatformDestroyer[] platforms;
+	private GameObjectDestroyer[] objects;
 
 	// Use this for initialization
 	void Start () {
@@ -24,10 +24,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Restart() {
-		platforms = FindObjectsOfType<PlatformDestroyer> ();
+		objects = FindObjectsOfType<GameObjectDestroyer> ();
 
-		foreach (PlatformDestroyer platform in platforms) {
-			Destroy(platform.gameObject);
+		foreach (GameObjectDestroyer obj in objects) {
+			Destroy(obj.gameObject);
 		}
 
 		player.transform.position = playerStartPoint;

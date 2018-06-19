@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float jump;
 	public bool isInGround;
 	public static bool isMoving;
-	public int powerUp;
+	public static int powerUp;
 	public LayerMask groundLayer;
 	public static double roundPosition;
 	public Transform groundChecker;

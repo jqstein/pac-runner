@@ -131,8 +131,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4180417979006210}
-  - component: {fileID: 114602636406155638}
   - component: {fileID: 61230158594257176}
+  - component: {fileID: 114662053030294390}
   m_Layer: 8
   m_Name: SnowPlatform7x1
   m_TagString: Untagged
@@ -276,7 +276,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114602636406155638
+--- !u!114 &114662053030294390
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1939815194815516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4fce7d838eee549b366a3f0b4896e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 16edaab7e55dce54e84e2499af56ad2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212100728532304162

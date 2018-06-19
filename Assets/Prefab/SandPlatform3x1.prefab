@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4852360669960084}
   - component: {fileID: 212133151672637910}
   - component: {fileID: 61503441053629074}
-  - component: {fileID: 114111934996863984}
+  - component: {fileID: 114560821349043776}
   m_Layer: 8
   m_Name: SandPlatform3x1
   m_TagString: Untagged
@@ -157,7 +157,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114111934996863984
+--- !u!114 &114560821349043776
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1978880317244540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4fce7d838eee549b366a3f0b4896e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 16edaab7e55dce54e84e2499af56ad2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212069639489012786

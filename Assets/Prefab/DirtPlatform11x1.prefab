@@ -100,8 +100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4211557198150888}
   - component: {fileID: 212336998739823794}
-  - component: {fileID: 114309285355003310}
   - component: {fileID: 61210264612504682}
+  - component: {fileID: 114943661144614026}
   m_Layer: 8
   m_Name: DirtPlatform11x1
   m_TagString: Untagged
@@ -397,7 +397,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114309285355003310
+--- !u!114 &114943661144614026
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1581331193924290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4fce7d838eee549b366a3f0b4896e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 16edaab7e55dce54e84e2499af56ad2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212081569233512566
