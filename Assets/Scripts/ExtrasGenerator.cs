@@ -6,9 +6,12 @@ public class ExtrasGenerator : MonoBehaviour {
 
 	private GameObject destructorPoint;
 	public GameObject[] coins;
+	public GameObject[] gems;
+	private PlayerController player;
 	private int randomExtra;
 
 	void Start () {
+		player = FindObjectOfType<PlayerController> ();
 		destructorPoint = GameObject.FindGameObjectWithTag ("DestructorPoint");
 	}
 
@@ -27,8 +30,11 @@ public class ExtrasGenerator : MonoBehaviour {
 				Instantiate (coin, coin.transform.position, Quaternion.identity);
 			} else if (randomExtra <= 8) {
 				// hazards
-			} else if (randomExtra == 19 && PlayerController.powerUp == 0) {
-				//power up
+			} else if (randomExtra >= 19  && player.powerUp == 0 && GameObject.FindGameObjectsWithTag ("Gem").Length == 0) {
+				GameObject gem = gems [Random.Range (0, 3)];
+				gem.transform.position = new Vector3 (startPosition.x + x, startPosition.y, startPosition.z);
+				Instantiate (gem, gem.transform.position, Quaternion.identity);
+				
 			}
 		}
 	}

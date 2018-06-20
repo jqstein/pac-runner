@@ -12,9 +12,11 @@ public class ScoreManager : MonoBehaviour {
 	private float highScoreCounter;
 
 	public static bool isDead;
+	public static int multiplier;
 
 	// Use this for initialization
 	void Start () {
+		multiplier = 1;
 		scoreCounter = 0;
 		highScoreCounter = 0;
 		if (PlayerPrefs.GetFloat ("highScoreCounter") != null) {
@@ -36,7 +38,7 @@ public class ScoreManager : MonoBehaviour {
 		}
 
 		if (PlayerController.isMoving) {
-			scoreCounter += Time.deltaTime;
+			scoreCounter += multiplier * Time.deltaTime;
 		}
 
 		scoreText.text = "Score: " + Mathf.Round(scoreCounter);
@@ -44,6 +46,6 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	public void AddValue(int scoreToAdd) {
-		scoreCounter += scoreToAdd;
+		scoreCounter += multiplier * scoreToAdd;
 	}
 }

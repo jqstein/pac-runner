@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float jump;
 	public bool isInGround;
 	public static bool isMoving;
-	public static int powerUp;
+	public int powerUp;
 	public LayerMask groundLayer;
 	public static double roundPosition;
 	public Transform groundChecker;
@@ -20,15 +20,21 @@ public class PlayerController : MonoBehaviour {
 	private Animator playerAnimator;
 	private float lastX;
 	private double jumpTime;
+	private double powerUpTime;
+	private bool hpSet;
+
+	private int hp;
 
 	// Use this for initialization
 	void Start () {
+		hp = 1;
 		initialSpeed = speed;
 		playerRigidBody = GetComponent<Rigidbody2D> ();
 		// playerCollider = GetComponent<Collider2D> ();
 		playerAnimator = GetComponent<Animator> ();
 		lastX = transform.position.x;
 		jumpTime = 0.5;
+		powerUpTime = 5;
 	}
 	
 	// Update is called once per frame
@@ -49,16 +55,26 @@ public class PlayerController : MonoBehaviour {
 			jumpTime = 0.5;
 		}
 
-		if (Input.GetButton ("Fire2")) {
-			powerUp = 1;
-		} else {
-			powerUp = 0;
+		if (powerUp != 0) {
+			powerUpTime -= Time.deltaTime;
+		} 
+
+		if (powerUp == 1 && !hpSet) {
+			hp = 9999;
+			hpSet = true;
+		} else if (powerUp == 2) {
+			ScoreManager.multiplier = 2;
+		} else if (powerUp == 3 && !hpSet) {
+			hp = 2;
+			hpSet = true;
 		}
 
-		if (Input.GetButton ("Fire3")) {
-			powerUp = 2;
-		} else {
+		if(powerUpTime <= 0) {
 			powerUp = 0;
+			hp = 1;
+			hpSet = false;
+			ScoreManager.multiplier = 1;
+			powerUpTime = 5;
 		}
 
 		isMoving = lastX != transform.position.x;
@@ -86,9 +102,13 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D collision) {
 		if (collision.gameObject.tag == "DeadZone") {
 			ScoreManager.isDead = true;
-			speed = initialSpeed;
-			gameManager.Restart ();
+			ScoreManager.multiplier = 1;
 			PlatformGenerator.restart = true;
+
+			speed = initialSpeed;
+			powerUp = 0;
+			hp = 1;
+			gameManager.Restart ();
 		}
 	}
 
