@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: 10
+  jumpExtra: 20
   isInGround: 0
   powerUp: 0
   groundLayer:

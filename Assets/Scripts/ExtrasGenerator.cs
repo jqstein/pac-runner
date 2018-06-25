@@ -7,8 +7,10 @@ public class ExtrasGenerator : MonoBehaviour {
 	private GameObject destructorPoint;
 	public GameObject[] coins;
 	public GameObject[] gems;
+	public GameObject spike;
 	private PlayerController player;
 	private int randomExtra;
+	private int spikesCount;
 
 	void Start () {
 		player = FindObjectOfType<PlayerController> ();
@@ -22,15 +24,18 @@ public class ExtrasGenerator : MonoBehaviour {
 	}
 
 	public void SpawnExtras(Vector3 startPosition, float platformSize) {
+		spikesCount = 0;
 		for (int x = 1; x < platformSize; x++) {
-			randomExtra = Random.Range(0, 20);
-			if (randomExtra <= 5) {
+			randomExtra = Random.Range(0, 100);
+			if (randomExtra < 50) {
 				GameObject coin = coins [0];
 				coin.transform.position = new Vector3 (startPosition.x + x, startPosition.y, startPosition.z);
 				Instantiate (coin, coin.transform.position, Quaternion.identity);
-			} else if (randomExtra <= 8) {
-				// hazards
-			} else if (randomExtra >= 19  && player.powerUp == 0 && GameObject.FindGameObjectsWithTag ("Gem").Length == 0) {
+			} else if (randomExtra >= 50 && randomExtra < 53 && spikesCount < 2) {
+				spikesCount++;
+				spike.transform.position = new Vector3 (startPosition.x + x, startPosition.y, startPosition.z);
+				Instantiate (spike, spike.transform.position, Quaternion.identity);
+			} else if (randomExtra == 60 && player.powerUp == 0 && GameObject.FindGameObjectsWithTag ("Gem").Length == 0) {
 				GameObject gem = gems [Random.Range (0, 3)];
 				gem.transform.position = new Vector3 (startPosition.x + x, startPosition.y, startPosition.z);
 				Instantiate (gem, gem.transform.position, Quaternion.identity);

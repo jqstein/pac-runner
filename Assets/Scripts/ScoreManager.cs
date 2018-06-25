@@ -29,19 +29,20 @@ public class ScoreManager : MonoBehaviour {
 	void Update () {
 		if (isDead) {
 			if (scoreCounter > highScoreCounter) {
-				highScoreCounter =  Mathf.Round(scoreCounter);
+				highScoreCounter = Mathf.Round (scoreCounter);
 				PlayerPrefs.SetFloat ("highScoreCounter", highScoreCounter);
 			}
 			scoreCounter = 0;
 			highScoreText.text = "High Score: " + highScoreCounter;
-			isDead = false;
-		}
 
-		if (PlayerController.isMoving) {
-			scoreCounter += multiplier * Time.deltaTime;
-		}
+		} else {
 
-		scoreText.text = "Score: " + Mathf.Round(scoreCounter);
+			if (PlayerController.isMoving) {
+				scoreCounter += multiplier * Time.deltaTime;
+			}
+
+			scoreText.text = "Score: " + Mathf.Round (scoreCounter);
+		}
 
 	}
 

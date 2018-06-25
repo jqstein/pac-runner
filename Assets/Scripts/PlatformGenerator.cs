@@ -40,7 +40,7 @@ public class PlatformGenerator : MonoBehaviour {
 		}
 		if (transform.position.x < createLocation.position.x) {
 			selectedPlatform = Random.Range(0, grassPlatforms.Length);
-			distanceBetweenPlatforms = Random.Range (0, PlayerController.speed);
+			distanceBetweenPlatforms = Random.Range (0.5f, 5);
 
 			if (PlayerController.roundPosition < 500) {
 				platform = grassPlatforms[selectedPlatform];
@@ -56,7 +56,9 @@ public class PlatformGenerator : MonoBehaviour {
 			platformWidth = platform.GetComponent<BoxCollider2D> ().size.x;
 			platformHeight = Random.Range(-4, 2);
 
-			extrasGenerator.SpawnExtras (new Vector3(transform.position.x - previousPlatformWidth/2, transform.position.y + 1f, transform.position.z), previousPlatformWidth);
+			if (transform.position.x != 4) {
+				extrasGenerator.SpawnExtras (new Vector3 (transform.position.x - previousPlatformWidth / 2, transform.position.y + 1f, transform.position.z), previousPlatformWidth);
+			}
 
 			transform.position = new Vector2(transform.position.x + distanceBetweenPlatforms + platformWidth/2 + previousPlatformWidth/2, platformHeight);
 			Instantiate (platform, transform.position, transform.rotation);

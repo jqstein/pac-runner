@@ -47,6 +47,6 @@ public class GameManager : MonoBehaviour {
 
 		player.transform.position = playerStartPoint;
 		platformGenerator.position = platformGeneratorStartPoint;
-
+		ScoreManager.isDead = false;
 	}
 }

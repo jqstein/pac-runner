@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	private float initialSpeed;
 	public static float speed;
 	public float jump;
+	public float jumpExtra;
 	public bool isInGround;
 	public static bool isMoving;
 	public int powerUp;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour {
 	private Animator playerAnimator;
 	private float lastX;
 	private double jumpTime;
+	private bool doubleJump;
 	private double powerUpTime;
 	private bool hpSet;
 
@@ -35,11 +37,16 @@ public class PlayerController : MonoBehaviour {
 		lastX = transform.position.x;
 		jumpTime = 0.5;
 		powerUpTime = 5;
+		doubleJump = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// isInGround = Physics2D.IsTouchingLayers (playerCollider, groundLayer);
+		if (hp <= 0) {
+			GameOver ();
+		}
+
 		isInGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
 
 		playerRigidBody.velocity = new Vector2(speed, playerRigidBody.velocity.y);
@@ -47,12 +54,19 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetButton("Fire1") && jumpTime > 0) {
 			playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jump);
 			jumpTime -= Time.deltaTime;
+
 		} else {
 			jumpTime = 0;
 		}
 
+
+
 		if (isInGround) {
 			jumpTime = 0.5;
+			doubleJump = true;
+		} else if (Input.GetButtonDown("Fire1") && doubleJump) {
+			playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpExtra);
+			doubleJump = false;
 		}
 
 		if (powerUp != 0) {
@@ -86,30 +100,38 @@ public class PlayerController : MonoBehaviour {
 		lastX = transform.position.x;
 		roundPosition = Mathf.Round(transform.position.x);
 
-		if (roundPosition < 500) {
+		if (roundPosition < 250) {
 			speed = 5;
-		} else if (roundPosition < 1000) {
+		} else if (roundPosition < 500) {
+			speed = 7;
+		} else if (roundPosition < 750) {
 			speed = 10;
+		} else if (roundPosition < 1000) {
+			speed = 12;
 		} else if (roundPosition < 1500) {
 			speed = 15;
-		} else if (roundPosition < 2000) {
-			speed = 20;
-		} else if (roundPosition < 2500) {
-			speed = 25;
 		}
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
 		if (collision.gameObject.tag == "DeadZone") {
-			ScoreManager.isDead = true;
-			ScoreManager.multiplier = 1;
-			PlatformGenerator.restart = false;
-
-			speed = 0;
-			powerUp = 0;
-			hp = 1;
-			gameManager.RestartMenu ();
+			GameOver ();
 		}
+
+		if (collision.gameObject.tag == "Spike") {
+			hp--;
+		}
+	}
+
+	private void GameOver() {
+		ScoreManager.isDead = true;
+		ScoreManager.multiplier = 1;
+		PlatformGenerator.restart = false;
+
+		speed = 0;
+		powerUp = 0;
+		hp = 1;
+		gameManager.RestartMenu ();
 	}
 
 }
