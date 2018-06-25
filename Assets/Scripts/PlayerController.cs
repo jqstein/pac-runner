@@ -103,12 +103,12 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag == "DeadZone") {
 			ScoreManager.isDead = true;
 			ScoreManager.multiplier = 1;
-			PlatformGenerator.restart = true;
+			PlatformGenerator.restart = false;
 
-			speed = initialSpeed;
+			speed = 0;
 			powerUp = 0;
 			hp = 1;
-			gameManager.Restart ();
+			gameManager.RestartMenu ();
 		}
 	}
 
