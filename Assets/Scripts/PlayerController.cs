@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour {
 	private bool hpSet;
 
 	private int hp;
+	
+	public AudioSource jumpSound;
+	public AudioSource deathSound;
+	public AudioSource backgroundSound;
 
 	// Use this for initialization
 	void Start () {
@@ -53,13 +57,11 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetButton("Fire1") && jumpTime > 0) {
 			playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jump);
+			if (jumpTime == 0.5) jumpSound.Play();
 			jumpTime -= Time.deltaTime;
-
 		} else {
 			jumpTime = 0;
 		}
-
-
 
 		if (isInGround) {
 			jumpTime = 0.5;
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour {
 		} else if (Input.GetButtonDown("Fire1") && doubleJump) {
 			playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpExtra);
 			doubleJump = false;
+			jumpSound.Play();
 		}
 
 		if (powerUp != 0) {
@@ -124,6 +127,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void GameOver() {
+		deathSound.Play();
+		backgroundSound.Stop();
 		ScoreManager.isDead = true;
 		ScoreManager.multiplier = 1;
 		PlatformGenerator.restart = false;

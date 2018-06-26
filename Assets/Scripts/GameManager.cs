@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	private GameObjectDestroyer[] objects;
 	
 	public DeathMenu theDeathScreen;
+	public AudioSource backgroundSound;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour {
 		theDeathScreen.gameObject.SetActive(false);
 		PlatformGenerator.restart = true;
 		player.gameObject.SetActive(true);
+		backgroundSound.Play();
 		PlayerController.speed = initialSpeed;
 		
 		objects = FindObjectsOfType<GameObjectDestroyer> ();
