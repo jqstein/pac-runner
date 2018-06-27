@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource jumpSound;
 	public AudioSource deathSound;
 	public AudioSource backgroundSound;
+	public AudioSource spikeSound;
 
 	// Use this for initialization
 	void Start () {
@@ -123,6 +124,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (collision.gameObject.tag == "Spike") {
 			hp--;
+            spikeSound.Play();
 		}
 	}
 
@@ -131,7 +133,7 @@ public class PlayerController : MonoBehaviour {
 		backgroundSound.Stop();
 		ScoreManager.isDead = true;
 		ScoreManager.multiplier = 1;
-		PlatformGenerator.restart = false;
+		//PlatformGenerator.restart = false;
 
 		speed = 0;
 		powerUp = 0;

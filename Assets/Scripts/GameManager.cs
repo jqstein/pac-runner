@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 		player.gameObject.SetActive(true);
 		backgroundSound.Play();
 		PlayerController.speed = initialSpeed;
-		
+        BgGenerator.restart = true;
 		objects = FindObjectsOfType<GameObjectDestroyer> ();
 
 		foreach (GameObjectDestroyer obj in objects) {
