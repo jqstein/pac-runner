@@ -8,6 +8,7 @@ TagManager:
   - DeadZone
   - Gem
   - Spike
+  - Frog
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class ExtrasGenerator : MonoBehaviour {
 	public GameObject[] coins;
 	public GameObject[] gems;
 	public GameObject spike;
+	public GameObject frog;
 	private PlayerController player;
 	private int randomExtra;
 	private int spikesCount;
@@ -35,6 +36,9 @@ public class ExtrasGenerator : MonoBehaviour {
 				spikesCount++;
 				spike.transform.position = new Vector3 (startPosition.x + x, startPosition.y, startPosition.z);
 				Instantiate (spike, spike.transform.position, Quaternion.identity);
+			} else if (randomExtra >= 53 && randomExtra < 55) {
+				frog.transform.position = new Vector3 (startPosition.x + x, startPosition.y - 0.5f, startPosition.z);
+				Instantiate (frog, frog.transform.position, Quaternion.identity);
 			} else if (randomExtra == 60 && player.powerUp == 0 && GameObject.FindGameObjectsWithTag ("Gem").Length == 0) {
 				GameObject gem = gems [Random.Range (0, 3)];
 				gem.transform.position = new Vector3 (startPosition.x + x, startPosition.y, startPosition.z);

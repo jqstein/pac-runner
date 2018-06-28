@@ -126,6 +126,11 @@ public class PlayerController : MonoBehaviour {
 			hp--;
             spikeSound.Play();
 		}
+
+		if (collision.gameObject.tag == "Frog") {
+			hp--;
+			deathSound.Play();
+		}
 	}
 
 	private void GameOver() {
